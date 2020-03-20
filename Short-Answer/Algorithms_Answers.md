@@ -22,8 +22,19 @@ So the building array would be something like:
 
 n = [false, false, false, ..., true, true, true]
 
-To determine the value of f I would loop through the building floors, starting at 0, checking if the floor is false or true. If false, I would increase the floor (f += 1) and try again until I found the first floor where it returns true.
+The objective is to find the first true value.
 
-This is a runtime complexity of O(n), since the runtime will increase linearly as n (the number of floors) increases.
+To start I would check the middle floor. If the egg breaks, I would move on to check the halfway point of the floors below. If it doesn't break I would move on to check from the halfway point of the floors above and so on.
 
+Once I find a "true" I would still need to keep checking because I want to find the lowest floor with a value of "true". So when I find a "true" I would temporarily store that index in "f". Whenever I find a "true" with a lower index/floor value I would update the value of "f", until there are no more floors to check.
 
+true
+true
+true
+true
+true
+true    <-    <-
+true                <-
+false         <-
+false
+false   <-
