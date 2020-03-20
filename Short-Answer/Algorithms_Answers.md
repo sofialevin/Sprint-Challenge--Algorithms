@@ -38,3 +38,5 @@ true                <-
 false         <-
 false
 false   <-
+
+This has a runtime of O(logn), because as the number of floors increases the number of checks required to find the first floor the egg breaks does not increase at the same rate.
